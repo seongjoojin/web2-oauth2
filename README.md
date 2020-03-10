@@ -16,3 +16,14 @@ Role
 - Authorization Server : 인증과 관련된 것을 처리해주는 서버
 
 - 강의에서는 Resource Server + Authorization Server를 Resource Server 명칭함
+
+## 등록
+
+- Client가 Resource Server를 이용하기 위해서는 Resource Server에 사전에 승인을 받아야함.
+- 위의 과정을 register(등록)이라고 함
+
+- Client ID, Client Secret, Authorized redirect URls를 공통으로 가짐
+
+- Client ID : 어플리케이션을 식별하는 식별자 => 외부에 노출되도 괜찮음
+- Client Secret : 식별자에 대한 비밀번호 => 절대로 외부에 노출되면 안 됨
+- Authorized redirect URls : 리소스 서버가 권한을 부여하는 과정에서 클라이언트에게 Authorized Code라는 값을 전달해주는 주소
