@@ -27,3 +27,12 @@ Role
 - Client ID : 어플리케이션을 식별하는 식별자 => 외부에 노출되도 괜찮음
 - Client Secret : 식별자에 대한 비밀번호 => 절대로 외부에 노출되면 안 됨
 - Authorized redirect URls : 리소스 서버가 권한을 부여하는 과정에서 클라이언트에게 Authorized Code라는 값을 전달해주는 주소
+
+## Resource Owner의 승인
+
+- 등록 과정을 거치면 Resource Server는 Client ID, Client Secret, Authorized redirect URls 정보를 가지게 되고 Client는 Client ID, Client Secret를 가지게 됨
+
+- client에서 Resource Owner가 요청하면 소셜 로그인이나 해당 Resource Server의 일부 기능을 사용하는 것에 대한 승인을 받는 화면을 내려줌 (사용자가 동의를 해야지 그 다음 과정을 진행할 수 있음)
+
+- 소셜 로그인 등은 결국 `https://resource.server?client_id=1&scope=B,C&redirect_uri=https://client/callback`등의 uri로 전달하여 Resource Owner가 Resource Server에 로그인 후 client id를 체크한 후 같으면 scope의 해당하는 권한을 클라이언트에게 부여할 것인지 확인하는 메세지를 보내게 됨
+- 허용하면 Resource Server에서 허용한 user id와 허용한 권한을 기억하게 됨
