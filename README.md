@@ -43,3 +43,10 @@ Role
 - Resource Owner은 받은 url로 이동하게 됨 (이 과정으로 client는 Authorized Code를 알게됨)
 - Client는 Resource Server에 직접 접근함 (https://resource.server/token?grant_type=authorization_code&code=3&redirect_uri=https://client/callback&client_id=1&client_secret=2 등의 형태로 접근)
 - Resource Server에서 authorization code, redirec uri, client id, client secret가 완전히 일치 하는지 체크 후 Access Token을 발급함
+
+## 액세스 토큰 발급
+
+- client가 준 정보가 완전히 일치하면 먼저 Resource Server와 client authorization code를 지움
+- Resource Server에서는 accessToken를 발급하게 됨
+- Resource Server에서는 발급한 accessToken을 client에게 전달해줌
+- Client는 accessToken를 저장함
