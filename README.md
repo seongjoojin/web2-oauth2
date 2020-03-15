@@ -59,3 +59,34 @@ Role
 - 예 : https://developers.google.com/calendar/v3/reference
 - https://developers.google.com/identity/protocols/oauth2/web-server#callinganapi
 - 보통 HTTP header의 Authorization에 억세스 토큰을 보내어서 사용함
+
+## Refresh Token
+
+- Access Token은 수명이 존재함
+- Access Token이 수명을 다 할 경우 다시 발급할 수 있도록 도와주는 것이 Refresh Token
+- https://tools.ietf.org/html/rfc6749#section-1.5
+
+```
+  +--------+                                           +---------------+
+  |        |--(A)------- Authorization Grant --------->|               |
+  |        |                                           |               |
+  |        |<-(B)----------- Access Token -------------|               |
+  |        |               & Refresh Token             |               |
+  |        |                                           |               |
+  |        |                            +----------+   |               |
+  |        |--(C)---- Access Token ---->|          |   |               |
+  |        |                            |          |   |               |
+  |        |<-(D)- Protected Resource --| Resource |   | Authorization |
+  | Client |                            |  Server  |   |     Server    |
+  |        |--(E)---- Access Token ---->|          |   |               |
+  |        |                            |          |   |               |
+  |        |<-(F)- Invalid Token Error -|          |   |               |
+  |        |                            +----------+   |               |
+  |        |                                           |               |
+  |        |--(G)----------- Refresh Token ----------->|               |
+  |        |                                           |               |
+  |        |<-(H)----------- Access Token -------------|               |
+  +--------+           & Optional Refresh Token        +---------------+
+```
+
+- https://developers.google.com/identity/protocols/oauth2/web-server#offline
