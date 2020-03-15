@@ -50,3 +50,12 @@ Role
 - Resource Server에서는 accessToken를 발급하게 됨
 - Resource Server에서는 발급한 accessToken을 client에게 전달해줌
 - Client는 accessToken를 저장함
+
+## API 호출
+
+- accessToken를 통하여 Resource Server를 조작함
+- client에서 Resource Server를 조작하기 위해서는 api를 통하여서 가능합니다.
+- API(Application Programming Interface)
+- 예 : https://developers.google.com/calendar/v3/reference
+- https://developers.google.com/identity/protocols/oauth2/web-server#callinganapi
+- 보통 HTTP header의 Authorization에 억세스 토큰을 보내어서 사용함
