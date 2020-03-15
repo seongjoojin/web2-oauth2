@@ -90,3 +90,13 @@ Role
 ```
 
 - https://developers.google.com/identity/protocols/oauth2/web-server#offline
+
+## 수업을 마치며
+
+- oauth는 인증 과정에 참여하고 있는 3자(Resource Server, Client, Resource Owner)가 어떻게 하면 서로를 신뢰할 수 있을까라는 고민에서 출발한 기술
+- ouath를 이해하고 해당 기능을 도와주는 라이브러리를 사용하는 것이 더 좋음
+
+공부할만한 주제
+
+- federated identity (login with facebook, login with google 등이 이러한 기술을 이용한 것)
+- oauth의 궁극적인 목표는 API 제어 (Restful, JSON, XML => 해당 지식을 습득해보는 것도 좋음)
